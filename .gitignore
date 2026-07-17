@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Jekyll
+docs/_site/
+docs/.sass-cache/
+docs/.jekyll-cache/
+docs/.jekyll-metadata
+
+# Ruby / Bundler
+docs/.bundle/
+docs/vendor/bundle/
+*.gem
+
+# Editor
+.vscode/
+.idea/
