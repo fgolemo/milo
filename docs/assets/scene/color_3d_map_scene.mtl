@@ -1,0 +1,9 @@
+# Materials for Rerun scene extract
+newmtl camera_image
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+d 1.0
+illum 1
+map_Kd color_3d_map_scene_camera.png
+

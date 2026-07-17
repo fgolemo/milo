@@ -277,3 +277,87 @@
 .photo-grid figure.wide {
   grid-column: 1 / -1;
 }
+
+/* ---- How Milo sees the world (3D viewer) ---- */
+.milo-world {
+  position: relative;
+  width: 100%;
+  margin: 1rem 0 0.75rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e1e4e8;
+  background: transparent;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.milo-world-view {
+  width: 100%;
+  height: min(56vw, 480px);
+  min-height: 280px;
+}
+
+.milo-world-view canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.milo-world-status {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #606c71;
+  font-size: 0.95rem;
+  background: transparent;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.milo-world-status.hidden {
+  opacity: 0;
+}
+
+.milo-world-hint {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  margin: 0;
+  z-index: 2;
+  color: #8b949e;
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  pointer-events: none;
+}
+
+.milo-world-hint strong {
+  color: #606c71;
+  font-weight: 600;
+}
+
+.milo-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  color: #606c71;
+  font-size: 0.92rem;
+}
+
+.milo-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.milo-legend .swatch {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}

@@ -34,6 +34,42 @@ layout: default
   </a>
 </div>
 
+
+## How Milo sees the world
+
+Milo builds a live 3D understanding of its surroundings from LiDAR and camera: occupied space, walkable floor, people, and the handler—then navigates through that map with a simulator-trained policy.
+
+<div
+  class="milo-world"
+  data-milo-world-viewer
+  data-obj="{{ '/assets/scene/color_3d_map_scene.obj' | relative_url }}"
+  data-mtl="{{ '/assets/scene/color_3d_map_scene.mtl' | relative_url }}"
+  data-focus="world_robot_footprint">
+  <div class="milo-world-view" aria-label="Interactive 3D perception scene"></div>
+  <div class="milo-world-status">Loading 3D scene…</div>
+  <p class="milo-world-hint"><strong>drag</strong> to orbit · <strong>scroll</strong> to zoom</p>
+</div>
+
+<ul class="milo-legend" aria-label="Color legend for the 3D scene">
+  <li><span class="swatch" style="background:#22c55e"></span>robot</li>
+  <li><span class="swatch" style="background:#a855f7"></span>handler</li>
+  <li><span class="swatch" style="background:#ef4444"></span>obstacles</li>
+  <li><span class="swatch" style="background:#9ca3af"></span>walkable path</li>
+  <li><span class="swatch" style="background:#3b82f6"></span>objects</li>
+  <li><span class="swatch" style="background:#eab308"></span>pedestrian</li>
+</ul>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="{{ '/assets/js/milo-world-viewer.js' | relative_url }}"></script>
+
+
 ## Abstract
 
 Many Blind and Low-Vision (BLV) people rely on guide dogs for moment-to-moment navigation, such as staying on path and avoiding obstacles and pedestrians. However, guide dogs are expensive to acquire and maintain (approximately $50k USD plus ongoing costs), often involve long waiting lists, and have relatively short life expectancies. While robot guide dogs offer a promising alternative, existing approaches exploring this idea suffer from several drawbacks: They often lack the autonomy required for real-world deployment, relying on prior 3D scans of the environment, external computation, or limited awareness of the handler.
