@@ -21,6 +21,10 @@
   color: #966BFF;
 }
 
+.main-content p {
+  margin-bottom: 0.2em;
+}
+
 .hero {
   display: block;
   width: 100%;
@@ -33,11 +37,57 @@
 
 .paper-title {
   margin-top: 0.25rem;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.15rem;
   font-size: 1.85rem;
-  line-height: 1.25;
+  line-height: 1.2;
   font-weight: 700;
   color: #966BFF;
+}
+
+.authors {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.author-list {
+  margin: 0 0 0.1rem;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.author-list a {
+  color: #606c71;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.author-list a:hover {
+  color: #966BFF;
+  text-decoration: underline;
+}
+
+.affiliation {
+  margin: 0 0 0.05rem;
+  color: #606c71;
+  font-size: 0.98rem;
+  line-height: 1.3;
+}
+
+.affiliation a {
+  color: #606c71;
+  text-decoration: none;
+}
+
+.affiliation a:hover {
+  color: #966BFF;
+  text-decoration: underline;
+}
+
+.equal-contrib {
+  margin: 0;
+  color: #8b949e;
+  font-size: 0.9rem;
+  line-height: 1.2;
 }
 
 .paper-meta {

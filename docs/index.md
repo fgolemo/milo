@@ -5,6 +5,18 @@ layout: default
 <img class="hero" src="{{ '/assets/header2.jpg' | relative_url }}" alt="Milo guiding a handler along an outdoor park path">
 
 <h1 class="paper-title">Milo, the Mila Fully Autonomous Indoor/Outdoor Robotic Guide Dog</h1>
+
+<div class="authors">
+  <p class="author-list">
+    <a href="https://fgolemo.github.io" target="_blank">Florian Golemo</a><sup>*</sup>,
+    <a href="https://jowsk.github.io/" target="_blank">Joanna Wolski</a><sup>*</sup>,
+    <a href="https://www.linkedin.com/in/joelmoniz/" target="_blank">Joel Moniz</a>,
+    <a href="https://chris-pal-lab.github.io/" target="_blank">Christopher Pal</a>
+  </p>
+  <p class="affiliation"><a href="https://mila.quebec" target="_blank" rel="noopener">Mila - Quebec AI Institute</a></p>
+  <p class="equal-contrib"><sup>*</sup> Equal contribution</p>
+</div>
+
 <p class="paper-meta">Submitted to the Conference on Robot Learning (CoRL) 2026<br><br><b>TL;DR:</b> Real guide dogs are incredibly expensive (~$50,000) and take long to train. With Milo, we've developed an autonomous (self-contained, no cloud compute) and low-cost (~$2,000) robot guide dog that can follow paths and avoid obstacles and pedestrians indoors and outdoors. And in order to foster open access for the blind/low-vision community, we're open-sourcing our research.</p>
 
 <div class="button-row">
