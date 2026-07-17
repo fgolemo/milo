@@ -1,0 +1,228 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Lead with the paper hero image instead of the theme banner. */
+.page-header {
+  display: none;
+}
+
+.main-content {
+  padding-top: 2rem;
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+  color: #966BFF;
+}
+
+.hero {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 0 0 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.paper-title {
+  margin-top: 0.25rem;
+  margin-bottom: 0.35rem;
+  font-size: 1.85rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #966BFF;
+}
+
+.paper-meta {
+  color: #606c71;
+  margin-bottom: 1.25rem;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none !important;
+  border: 1px solid transparent;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+}
+
+.btn-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  opacity: 0.95;
+}
+
+.btn-github {
+  background: #aaa;
+  color: #24292f !important;
+}
+
+.btn-arxiv {
+  background: #94D0FF;
+  color: #000 !important;
+}
+
+.btn-pdf {
+  background: #FF6AD5;
+  color: #000 !important;
+}
+
+.btn-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: currentColor;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin: 1rem 0 2rem;
+}
+
+@media screen and (min-width: 700px) {
+  .demo-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.demo-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #e1e4e8;
+  background: #0d1117;
+}
+
+.demo-card p {
+  margin: 0.5rem 0 0;
+  color: #606c71;
+  font-size: 0.95rem;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 2rem;
+  font-size: 0.92rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+  border: 1px solid #e1e4e8;
+  padding: 0.55rem 0.65rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.comparison-table th {
+  background: #f6f8fa;
+  font-weight: 700;
+}
+
+.comparison-table td:first-child,
+.comparison-table th:first-child {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.comparison-table tr.ours {
+  background: #e8f8ef;
+  font-weight: 600;
+}
+
+.mark-yes {
+  color: #159957;
+  font-weight: 700;
+}
+
+.mark-no {
+  color: #cb2431;
+  font-weight: 700;
+}
+
+.video-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin: 1rem 0 2rem;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #0d1117;
+}
+
+.video-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9d1d9;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1rem;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+@media screen and (min-width: 700px) {
+  .photo-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.photo-grid figure {
+  margin: 0;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #e1e4e8;
+}
+
+.photo-grid figcaption {
+  margin-top: 0.4rem;
+  color: #606c71;
+  font-size: 0.9rem;
+}
+
+.photo-grid figure.wide {
+  grid-column: 1 / -1;
+}
