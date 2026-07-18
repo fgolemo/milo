@@ -157,7 +157,9 @@
   }
 }
 
-.demo-card img {
+.demo-card img,
+.demo-card video {
+  display: block;
   width: 100%;
   height: auto;
   border-radius: 6px;
@@ -205,11 +207,15 @@
 .mark-yes {
   color: #159957;
   font-weight: 700;
+  font-size: 2em;
+  line-height: 1;
 }
 
 .mark-no {
   color: #cb2431;
   font-weight: 700;
+  font-size: 2em;
+  line-height: 1;
 }
 
 .video-wrap {

@@ -13,7 +13,7 @@ layout: default
     <a href="https://www.linkedin.com/in/joelmoniz/" target="_blank">Joel Moniz</a>,
     <a href="https://chris-pal-lab.github.io/" target="_blank">Christopher Pal</a>
   </p>
-  <p class="affiliation"><a href="https://mila.quebec" target="_blank" rel="noopener">Mila - Quebec AI Institute</a></p>
+  <p class="affiliation"><a href="https://mila.quebec" target="_blank" rel="noopener">Mila - Quebec AI Institute</a>, <a href="https://www.polymtl.ca/" target="_blank" rel="noopener">Polytechnique Montreal</a></p>
   <p class="equal-contrib"><sup>*</sup> Equal contribution</p>
 </div>
 
@@ -34,6 +34,35 @@ layout: default
   </a>
 </div>
 
+
+## Demos
+
+<div class="demo-grid">
+  <div class="demo-card">
+    <video autoplay muted loop playsinline controls>
+      <source src="{{ '/assets/dogwalk1-indoor.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <p>Indoor navigation</p>
+  </div>
+  <div class="demo-card">
+    <video autoplay muted loop playsinline controls>
+      <source src="{{ '/assets/dogwalk2-indoor.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <p>Indoor obstacle course</p>
+  </div>
+  <div class="demo-card">
+    <video autoplay muted loop playsinline controls>
+      <source src="{{ '/assets/dogwalk3-outdoor.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <p>Outdoor navigation</p>
+  </div>
+  <div class="demo-card">
+    <video autoplay muted loop playsinline controls>
+      <source src="{{ '/assets/dogwalk4-drone1.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <p>Outdoor nav with pedestrian avoidance (drone view)</p>
+  </div>
+</div>
 
 ## How Milo sees the world
 
@@ -76,18 +105,6 @@ Many Blind and Low-Vision (BLV) people rely on guide dogs for moment-to-moment n
 
 In this work, we present **Milo**, the first open-source, low-cost (approximately $2k USD) robotic guide dog platform capable of fulfilling the basic collaborative navigation role expected of a guide dog. Milo is fully autonomous, requiring no *a priori* knowledge of the environment, completely self-contained with all computation performed onboard, and suitable for both indoor and outdoor navigation while avoiding obstacles and pedestrians. Our system consists of a modified Unitree Go2 robot (equipped with onboard compute, sensors, and a handle), a perception stack combining voxel mapping with floor, obstacle, and pedestrian detection, and a navigation stack based on an obstacle-avoidance policy trained in a custom bird's-eye-view simulator. We evaluate Milo in real indoor and outdoor obstacle courses and compare it against a costmap-based baseline, demonstrating smoother navigation and fewer handler collisions. To maximize accessibility for BLV users, we release both the robot hardware instructions and the complete software stack as open source.
 
-## Demos
-
-<div class="demo-grid">
-  <div class="demo-card">
-    <img src="{{ '/assets/demo_outdoor.gif' | relative_url }}" alt="Outdoor path-following demo">
-    <p>TODO Outdoor collaborative navigation along winding paths.</p>
-  </div>
-  <div class="demo-card">
-    <img src="{{ '/assets/demo_path_following.gif' | relative_url }}" alt="Path-following experiment demo">
-    <p>TODO Path following on a bridge course vs. a costmap baseline.</p>
-  </div>
-</div>
 
 ## Comparison with Prior Work
 
@@ -105,7 +122,7 @@ In this work, we present **Milo**, the first open-source, low-cost (approximatel
   </thead>
   <tbody>
     <tr>
-      <td>Sorokin et al.</td>
+      <td><a href="https://arxiv.org/abs/2109.05603" target="_blank">Sorokin et al.</a></td>
       <td>Outdoor only</td>
       <td><span class="mark-yes">✓</span></td>
       <td><span class="mark-yes">✓</span></td>
@@ -114,7 +131,7 @@ In this work, we present **Milo**, the first open-source, low-cost (approximatel
       <td><span class="mark-no">✗</span></td>
     </tr>
     <tr>
-      <td>Cai et al., “RDog”</td>
+      <td><a href="https://dl.acm.org/doi/10.1145/3613904.3642227" target="_blank">Cai et al., “RDog”</a></td>
       <td><span class="mark-yes">✓</span></td>
       <td><span class="mark-no">✗</span></td>
       <td><span class="mark-yes">✓</span></td>
@@ -123,7 +140,7 @@ In this work, we present **Milo**, the first open-source, low-cost (approximatel
       <td><span class="mark-no">✗</span></td>
     </tr>
     <tr>
-      <td>Hwang et al., “Summer”</td>
+      <td><a href="https://arxiv.org/abs/2210.13368" target="_blank">Hwang et al., “Summer”</a></td>
       <td>Indoor only</td>
       <td><span class="mark-yes">✓</span></td>
       <td><span class="mark-no">✗</span></td>
@@ -132,7 +149,7 @@ In this work, we present **Milo**, the first open-source, low-cost (approximatel
       <td><span class="mark-no">✗</span></td>
     </tr>
     <tr>
-      <td>Hwang et al., “GuideNav”</td>
+      <td><a href="https://arxiv.org/abs/2512.06147" target="_blank">Hwang et al., “GuideNav”</a></td>
       <td>Outdoor only</td>
       <td><span class="mark-no">✗</span></td>
       <td><span class="mark-yes">✓</span></td>
@@ -170,18 +187,37 @@ In this work, we present **Milo**, the first open-source, low-cost (approximatel
 </div>
 {% endif %}
 
-## Photos
+## Figures
 
 <div class="photo-grid">
   <figure class="wide">
     <img src="{{ '/assets/method_overview.png' | relative_url }}" alt="Method overview pipeline">
-    <figcaption>Method overview: sensors → perception → BEV map → navigation policy → robot commands.</figcaption>
+    <figcaption><b>Method Overview:</b> 
+    <ul>
+      <li/>(a) RGB images, LiDAR scans, odometry, and handle encoder measurements are acquired. 
+      <li/>(b) RGB images are processed to segment the walkable path and detect objects and pedestrians, while depth estimation updates pedestrian positions. 
+      <li/>(c) The segmented path, detected objects and pedestrians, the robot and handler states, and LiDAR data are fused into a voxel-based 3D map. 
+      <li/>(d) The voxel map is converted into a bird's-eye-view (BEV) representation. 
+      <li/>(e) The BEV map is provided to the trained navigation policy, which predicts the robot's linear velocity and yaw rate commands. 
+      <li/>(f) The predicted commands are filtered by a local obstacle avoidance safety module before being sent to the robot.</ul>
+      </figcaption>
   </figure>
-  <figure>
+  <figure class = "wide">
     <img src="{{ '/assets/hardware.png' | relative_url }}" alt="Hardware overview of Milo">
-    <figcaption>Hardware: Unitree Go2, Jetson Orin Nano, 2-DoF handle joint, and D-pad.</figcaption>
+    <figcaption>
+    <b>Hardware Overview:</b> 
+    <ul>
+    <li/>(A) The Nvidia Jetson Orin Nano runs navigation and perception systems; 
+    <li/>(B) the 2 degree-of-freedom joint is equipped with magnetic encoders that sense the handler's position with respect to the dog; 
+    <li/>(C) the telescopic handle is adjustable to cater to different handler heights and preferences; 
+    <li/>(D) with the 5-way directional pad, the handler can start/stop the robot, indicate faster/slower walk speed, and desire to turn at the next opportunity; 
+    <li/>(E) the whole system is based on a Unitree Go2 Air/Pro robot dog, utilizing its...
+    <li/>(F) LiDAR and...
+    <li/>(G) front-facing RGB camera.
+    </ul>
+    </figcaption>
   </figure>
-  <figure>
+  <!-- <figure>
     <img src="{{ '/assets/simulator.png' | relative_url }}" alt="BEV simulator observation">
     <figcaption>Bird’s-eye-view simulator used to train the navigation policy.</figcaption>
   </figure>
@@ -192,7 +228,7 @@ In this work, we present **Milo**, the first open-source, low-cost (approximatel
   <figure>
     <img src="{{ '/assets/obstacle_course.jpg' | relative_url }}" alt="Indoor obstacle avoidance course">
     <figcaption>Indoor static obstacle avoidance course.</figcaption>
-  </figure>
+  </figure> -->
   <figure class="wide">
     <img src="{{ '/assets/segmentation.jpg' | relative_url }}" alt="Walkable path segmentation comparison">
     <figcaption>Walkable-path segmentation across indoor and outdoor scenes.</figcaption>
