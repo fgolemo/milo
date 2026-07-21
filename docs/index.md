@@ -10,7 +10,7 @@ layout: default
   <p class="author-list">
     <a href="https://fgolemo.github.io" target="_blank">Florian Golemo</a><sup>*</sup>,
     <a href="https://jowsk.github.io/" target="_blank">Joanna Wolski</a><sup>*</sup>,
-    <a href="https://www.linkedin.com/in/joelmoniz/" target="_blank">Joel Moniz</a>,
+    <a href="https://www.linkedin.com/in/joelmoniz/" target="_blank">Joel Ruben Antony Moniz</a>,
     <a href="https://chris-pal-lab.github.io/" target="_blank">Christopher Pal</a>
   </p>
   <p class="affiliation"><a href="https://mila.quebec" target="_blank" rel="noopener">Mila - Quebec AI Institute</a>, <a href="https://www.polymtl.ca/" target="_blank" rel="noopener">Polytechnique Montreal</a></p>
