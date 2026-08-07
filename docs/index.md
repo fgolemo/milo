@@ -155,7 +155,7 @@ In this work, we present **Milo**, the first open-source, low-cost (approximatel
       <td><span class="mark-yes">✓</span></td>
       <td><span class="mark-no">✗</span></td>
       <td><span class="mark-no">✗</span></td>
-      <td><span class="mark-no">✗</span></td>
+      <td><span class="mark-no">✓</span></td>
     </tr>
     <tr class="ours">
       <td>Ours, “Milo”</td>
